@@ -1,6 +1,11 @@
 # Python Virtual Environment Directories
 venv/
 venv*/
+project-v/
+*/venv/
+.venv/
+env/
+ENV/
 
 # Python Cache Files
 __pycache__/
@@ -23,8 +28,6 @@ pyvenv.cfg
 .env.development
 .env.test
 .env.production
-project-v/
-
 
 # IDE Files
 .idea/
@@ -39,8 +42,11 @@ Thumbs.db
 # Generated Documentation Directory
 docs/_build/
 
-# entorno virtual que se llama "project-v"
-
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+*.egg
 
 
 
