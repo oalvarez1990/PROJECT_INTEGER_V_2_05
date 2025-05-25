@@ -1,8 +1,8 @@
-name: Entregables
+name: Update Economic Indicator Data
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
@@ -10,30 +10,38 @@ jobs:
     permissions:
       contents: write
 
-
     steps:
-      - name: Paso 1 Checkout repo
+      - name: Paso 1 - Checkout repo
         uses: actions/checkout@v4
 
-      - name: Paso 2 Setup Python
+      - name: Paso 2 - Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.9.2'
-      - name: Paso 3 - crea entorno virtual
-        run: python -m venv venv
-      - name: Paso 4 - activar entorno virtual
-        run: ./venv/Scripts/activate   
-      - name: Paso 5 - actualizar pip
-        run: pip install --upgrade pip
-      - name: Paso 6 - instalar dependencias
-        run: pip install -e .
-      - name: Paso 7 - Ejecutar Script
-        run: python main.py
+          python-version: "3.9.2"
 
-      - name: Commit and Push changes
+      - name: Paso 3 - Crear entorno virtual
+        run: python -m venv venv
+
+      - name: Paso 4 - Activar entorno virtual
+        run: ./venv/Scripts/activate
+
+      - name: Paso 5 - Actualizar pip
+        run: pip install --upgrade pip
+
+      - name: Paso 6 - Instalar dependencias específicas
+        run: |
+          pip install pandas
+          pip install yfinance
+          pip install requests
+          pip install beautifulsoup4
+
+      - name: Paso 7 - Ejecutar Script
+        run: python src/project_piv/main.py
+
+      - name: Paso 8 - Commit y Push de cambios
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: Generación Web Scraping de Indicadores de Yahoo Finanzas.
+          commit_message: Actualización automática de datos del E-Mini S&P 500
           commit_user_name: Omar Aleiser Alvarez [GitHub Actions]
           commit_user_email: omar.alvarez@iudigital.edu.co
           commit_author: Omar Alvarez <omar.alvarez@iudigital.edu.co>

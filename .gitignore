@@ -1,0 +1,49 @@
+# Python Virtual Environment Directories
+venv/
+venv*/
+
+# Python Cache Files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Log Files
+*.log
+logs/
+
+# Dependency Directories
+Lib/
+Include/
+Scripts/
+pyvenv.cfg
+
+# Environment Files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+project-v/
+
+
+# IDE Files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Generated Documentation Directory
+docs/_build/
+
+# entorno virtual que se llama "project-v"
+
+
+
+
+
+
+
