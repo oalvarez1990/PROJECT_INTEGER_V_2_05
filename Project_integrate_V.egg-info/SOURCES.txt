@@ -1,6 +1,0 @@
-setup.py
-Project_integrate_V.egg-info/PKG-INFO
-Project_integrate_V.egg-info/SOURCES.txt
-Project_integrate_V.egg-info/dependency_links.txt
-Project_integrate_V.egg-info/requires.txt
-Project_integrate_V.egg-info/top_level.txt
