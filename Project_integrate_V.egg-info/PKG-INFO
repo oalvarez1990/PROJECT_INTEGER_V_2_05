@@ -1,0 +1,12 @@
+Metadata-Version: 2.4
+Name: Project-integrate-V
+Version: 0.0.1
+Author: Omar Alvarez
+Author-email: 
+Requires-Dist: pandas==2.2.3
+Requires-Dist: openpyxl
+Requires-Dist: requests==2.32.3
+Requires-Dist: beautifulsoup4==4.13.3
+Requires-Dist: scikit-learn>=0.24.0
+Dynamic: author
+Dynamic: requires-dist
