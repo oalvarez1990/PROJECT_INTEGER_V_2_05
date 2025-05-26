@@ -16,7 +16,7 @@ from sklearn.pipeline import Pipeline
 import xgboost as XGBRegressor
 from matplotlib.backends.backend_pdf import PdfPages
 # import logging
-from ...logger import Logger 
+from ...logger import Logger
 
 class Modeller:
     """
