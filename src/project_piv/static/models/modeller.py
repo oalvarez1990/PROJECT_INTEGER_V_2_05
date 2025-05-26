@@ -1,7 +1,10 @@
 # modeller.py
 import pandas as pd
 import numpy as np
+import sys
 import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../..')))
+#
 import pickle
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -15,7 +18,6 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 from sklearn.pipeline import Pipeline
 import xgboost as XGBRegressor
 from matplotlib.backends.backend_pdf import PdfPages
-# import logging
 from project_piv.logger import Logger
 
 class Modeller:

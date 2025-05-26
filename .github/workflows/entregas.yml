@@ -54,4 +54,4 @@ jobs:
           commit_user_email: omar.alvarez@iudigital.edu.co
           commit_author: Omar Alvarez <omar.alvarez@iudigital.edu.co>
           # specific files to commit
-          file_pattern: "src/project_piv/static/data/* src/project_piv/logs/*"
+          file_pattern: "src/project_piv/logs*"
