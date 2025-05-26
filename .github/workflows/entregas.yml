@@ -36,7 +36,9 @@ jobs:
           pip install beautifulsoup4
 
       - name: Paso 7 - Ejecutar Script
-        run: python src/project_piv/main.py
+        run: |
+          python src/project_piv/main.py          
+          python src/project_piv/enricher.py
 
       - name: Paso 8 - Commit y Push de cambios
         uses: stefanzweifel/git-auto-commit-action@v5
@@ -46,4 +48,4 @@ jobs:
           commit_user_email: omar.alvarez@iudigital.edu.co
           commit_author: Omar Alvarez <omar.alvarez@iudigital.edu.co>
           # specific files to commit
-          file_pattern: 'src/project_piv/static/data/* src/project_piv/logs/*'         
+          file_pattern: "src/project_piv/static/data/* src/project_piv/logs/*"
