@@ -72,6 +72,8 @@ Las contribuciones son bienvenidas. Por favor, siga estos pasos:
 1. Power bi
 Enlace https://app.powerbi.com/links/KEbkC6BvK3?ctid=497e92eb-da55-450d-a1ce-31ff2ad5fc08&pbi_source=linkShare
 
+El anterior enlace permite visualizar el dashboard de la presentación datos finanles.
+
 ## Licencia
 
 Este proyecto está licenciado bajo la Licencia MIT - vea el archivo LICENSE para más detalles.
