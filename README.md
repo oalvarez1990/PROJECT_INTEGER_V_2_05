@@ -69,7 +69,8 @@ Las contribuciones son bienvenidas. Por favor, siga estos pasos:
 5. Cree un Pull Request
 
 ## Enlaces importantes
-1. Power bi https://app.powerbi.com/links/KEbkC6BvK3?ctid=497e92eb-da55-450d-a1ce-31ff2ad5fc08&pbi_source=linkShare
+1. Power bi
+Enlace https://app.powerbi.com/links/KEbkC6BvK3?ctid=497e92eb-da55-450d-a1ce-31ff2ad5fc08&pbi_source=linkShare
 
 ## Licencia
 
