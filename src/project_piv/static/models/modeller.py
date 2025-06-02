@@ -4,11 +4,14 @@ import numpy as np
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../..')))
-#
-import pickle
+
+# Set matplotlib backend to 'Agg' before importing pyplot
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import seaborn as sns
 from datetime import datetime
+import pickle
 from sklearn.model_selection import train_test_split, TimeSeriesSplit, GridSearchCV
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
 from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
@@ -16,7 +19,7 @@ from sklearn.linear_model import LinearRegression, Ridge, Lasso
 from sklearn.svm import SVR
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 from sklearn.pipeline import Pipeline
-import xgboost as XGBRegressor
+from xgboost import XGBRegressor
 from matplotlib.backends.backend_pdf import PdfPages
 from project_piv.logger import Logger
 
@@ -44,7 +47,8 @@ class Modeller:
         if data_dir is None:
             self.data_dir = os.path.join(
                 os.path.dirname(os.path.abspath(__file__)),
-                'static'
+                '..',  # Go up one level to reach static
+                'data'
             )
         else:
             self.data_dir = data_dir
@@ -52,12 +56,11 @@ class Modeller:
         # Define file paths
         self.data_path = os.path.join(
             self.data_dir,
-            'data',
             f'enriched_{indicator_symbol.replace("=F", "")}.csv'
         )
 
         # Create models directory if it doesn't exist
-        self.models_dir = os.path.join(self.data_dir, 'models')
+        self.models_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'models')
         os.makedirs(self.models_dir, exist_ok=True)
 
         self.model_path = os.path.join(self.models_dir, 'model.pkl')
@@ -165,6 +168,21 @@ class Modeller:
 
             # Drop rows with NaN in features
             df = df.dropna(subset=feature_cols)
+
+            # Handle infinite values and large numbers
+            for col in feature_cols:
+                # Replace infinite values with NaN
+                df[col] = df[col].replace([np.inf, -np.inf], np.nan)
+                
+                # Calculate the 1st and 99th percentiles
+                q1 = df[col].quantile(0.01)
+                q99 = df[col].quantile(0.99)
+                
+                # Clip values outside these percentiles
+                df[col] = df[col].clip(lower=q1, upper=q99)
+
+            # Drop any remaining NaN values
+            df = df.dropna()
 
             # Extract features and target
             X = df[feature_cols]
