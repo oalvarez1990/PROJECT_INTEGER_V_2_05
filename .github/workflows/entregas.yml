@@ -39,6 +39,7 @@ jobs:
           pip install seaborn
           pip install plotly
           pip install statsmodels
+          pip install xgboost
          
 
       - name: Paso 7 - Ejecutar Script
