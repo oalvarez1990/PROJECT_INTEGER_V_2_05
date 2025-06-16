@@ -395,7 +395,7 @@ class EminiDashboard:
         ), unsafe_allow_html=True)
         
         # Feature importance (example)
-        st.markdown("#### 📊 Feature Importance (Example)")
+        st.markdown("#### 📊 Feature Importance")
         
         # Example data - in a real case you should load actual model weights
         features = [f"Feature {i}" for i in range(1, 11)]

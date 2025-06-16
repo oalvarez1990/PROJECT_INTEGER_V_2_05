@@ -52,13 +52,15 @@ Para ejecutar el proyecto, simplemente corra el archivo main.py:
 El proyecto incluye un flujo de trabajo de GitHub Actions que ejecuta automáticamente el proceso de recolección de datos cada día. Esto garantiza que el conjunto de datos se mantenga actualizado sin intervención manual.
 
 ### Metodología
+## Arquitectura General
 
-El sistema implementa una arquitectura modular basada en clases:
+El sistema se compone de los siguientes módulos principales:
 
-*Logger: Gestiona el registro de eventos y errores.
-*Collector: Responsable de la extracción, limpieza y almacenamiento de datos.
-*Enricher: Calcula indicadores financieros a partir de los datos históricos.
-
+- **Logger:** Abstracción para la gestión centralizada de logs, errores y eventos del sistema.
+- **Collector:** Encapsula la lógica de extracción, validación, limpieza y almacenamiento de datos desde fuentes externas.
+- **Enricher:** Implementa algoritmos para el cálculo de indicadores financieros y la transformación de datos.
+- **Utils:** Funciones auxiliares para soporte de operaciones comunes.
+- **Pipeline de Automatización:** Orquestación de tareas mediante GitHub Actions para ejecución programada.
 ## Contribución
 Las contribuciones son bienvenidas. Por favor, siga estos pasos:
 
@@ -73,6 +75,9 @@ Las contribuciones son bienvenidas. Por favor, siga estos pasos:
 Enlace https://app.powerbi.com/links/KEbkC6BvK3?ctid=497e92eb-da55-450d-a1ce-31ff2ad5fc08&pbi_source=linkShare
 
 El anterior enlace permite visualizar el dashboard de la presentación datos finanles.
+
+2. link para visualizar despliegue
+https://projectv.streamlit.app/ 
 
 ## Licencia
 
