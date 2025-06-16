@@ -15,7 +15,7 @@ import sys
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from logger import Logger
-from project_piv.modeller import Modeller
+from static.models.modeller import Modeller
 
 # Page configuration
 st.set_page_config(
